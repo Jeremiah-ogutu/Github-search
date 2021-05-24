@@ -20,6 +20,9 @@ export class ProfileService {
     this.user =new User("","",0,"")
     this.repository = new Repository("","","")
   }
+  // getProfileData(){
+  //   return this.http.get("https://api.github.com/users/Jeremiah-ogutu")
+  // };
 
   getUserData(username: string){
     interface APIResponse{
@@ -42,7 +45,7 @@ export class ProfileService {
     })
     this.http.get<any>("https://api.github.com/users/"+username + "/repos").toPromise().then(response =>{
       for(let i=0; i<response.length; i++){
-        this.newUserData = new Repository(response[i].name,response[i].updated_at,response[i].language,);
+        this.newUserData = new Repository(response[i].name,response[i].updated_at,response[i].language);
         // this.repoData.push(this.newUserData);
 
       }

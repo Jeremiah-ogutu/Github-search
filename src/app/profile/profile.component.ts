@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { promise } from 'selenium-webdriver';
+// import { promise } from 'selenium-webdriver';
 import { ProfileService } from '../profile.service';
 
 @Component({
@@ -15,14 +15,14 @@ export class ProfileComponent implements OnInit {
     this.profileService.getUserData(this.username)
   }
 
-  // profile:any;
+  profile:any;
   constructor(profileService:ProfileService) {
     this.profileService = profileService
-    // this.profileService.getProfileData().subscribe(profile =>{
-    //   console.log(profile);
-    //   this.profile=profile;
+    this.profileService.getProfileData().subscribe(profile =>{
+      console.log(profile);
+      this.profile=profile;
 
-    // });
+    });
    }
 
   ngOnInit(){

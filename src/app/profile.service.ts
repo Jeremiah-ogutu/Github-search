@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import{User} from './user'
 import { from } from 'rxjs';
 import{Repository} from './repository'
-import { rejects } from 'assert';
+// import { rejects } from 'assert';
 import { BinaryOperatorExpr } from '@angular/compiler';
 import { error } from '@angular/compiler/src/util';
 
@@ -43,7 +43,7 @@ export class ProfileService {
     this.http.get<any>("https://api.github.com/users/"+username + "/repos").toPromise().then(response =>{
       for(let i=0; i<response.length; i++){
         this.newUserData = new Repository(response[i].name,response[i].updated_at,response[i].language,);
-        this.repoData.push(this.newUserData);
+        // this.repoData.push(this.newUserData);
 
       }
       resolve()
@@ -57,9 +57,9 @@ export class ProfileService {
     
   }
 
-  // getProfileData(){
-  //   return this.http.get("https://api.github.com/users/Jeremiah-ogutu");
-  // }
+  getProfileData(){
+    return this.http.get("https://api.github.com/users/Jeremiah-ogutu");
+  }
 
   
 }

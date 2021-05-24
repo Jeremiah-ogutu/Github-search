@@ -18,9 +18,10 @@ export class ProfileresultComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.user = this.profileService.user
-    this.repoDetail=(this.profileService.repoData
+    this.user = this.profileService.user;
+    this.repoDetail=(this.profileService.repoData);
   }
+
 
 
 }

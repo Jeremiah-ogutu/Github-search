@@ -27,7 +27,7 @@ export class ProfileService {
       avatar_url: string
     }
     let promise = new Promise<void>((resolve,rejects)=>{
-      this.http.get<APIResponse>("https://api.github.com/users/Jeremiah-ogutu"+username).toPromise().then(response=>{
+      this.http.get<APIResponse>("https://api.github.com/users/"+username).toPromise().then(response=>{
         this.user.bio = response.bio;
         this.user.public_repos = response.public_repos;
         this.user.login = response.login;
@@ -35,11 +35,7 @@ export class ProfileService {
 
         resolve();
     })
-    error{
-      rejects(error);
-      )
-    }
-    this.http.get<any>
+
    })
 
     

@@ -14,16 +14,36 @@ export class ProfileService {
   repository!: Repository;
   repoData =[];
 
- 
-  //   error{
-  //     rejects(error);
-  //     )
-  //   }
-  //   this.http.get<any>
-  //  })
+  constructor(private http:HttpClient) { 
+    this.user =new User("","",0,"")
+    this.repository = new Repository("","","")
+  }
+
+  getUserData(username: string){
+    interface APIResponse{
+      bio:string
+      public_repos:number
+      login:string
+      avatar_url: string
+    }
+    let promise = new Promise<void>((resolve,rejects)=>{
+      this.http.get<APIResponse>("https://api.github.com/users/Jeremiah-ogutu"+username).toPromise().then(response=>{
+        this.user.bio = response.bio;
+        this.user.public_repos = response.public_repos;
+        this.user.login = response.login;
+        this.user.avatar_url= response.avatar_url;
+
+        resolve();
+    })
+    error{
+      rejects(error);
+      )
+    }
+    this.http.get<any>
+   })
 
     
-  // }
+  }
 
   // getProfileData(){
   //   return this.http.get("https://api.github.com/users/Jeremiah-ogutu");

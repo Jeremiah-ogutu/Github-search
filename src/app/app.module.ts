@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http'
 // import { profile } from 'console';
 import { ProfileService } from './profile.service';
 import { ProfileresultComponent } from './profileresult/profileresult.component';
+import{FormsModule} from  '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileresultComponent } from './profileresult/profileresult.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
   ],
   providers: [ProfileService],

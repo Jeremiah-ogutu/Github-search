@@ -26,17 +26,17 @@ export class ProfileService {
 
   getUserData(username: string){
     interface APIResponse{
-      bio:string
-      public_repos:number
-      login:string
-      avatar_url: string
+    //   bio:string
+    //   public_repos:number
+    //   login:string
+    //   avatar_url: string
     }
     let promise = new Promise<void>((resolve,rejects)=>{
       this.http.get<APIResponse>("https://api.github.com/users/"+username).toPromise().then(response=>{
-        this.user.bio = response.bio;
-        this.user.public_repos = response.public_repos;
-        this.user.login = response.login;
-        this.user.avatar_url= response.avatar_url;
+        // this.user.bio = response.bio;
+        // this.user.public_repos = response.public_repos;
+        // this.user.login = response.login;
+        // this.user.avatar_url= response.avatar_url;
 
         resolve();
     },

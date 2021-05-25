@@ -16,6 +16,7 @@ export class ProfileresultComponent implements OnInit {
   constructor(ProfileService: ProfileService ) { 
     this.profileService =ProfileService
   }
+  
 
   ngOnInit(){
     this.user = this.profileService.user;
